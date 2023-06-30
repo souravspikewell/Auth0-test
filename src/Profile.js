@@ -4,7 +4,9 @@ import { auth } from "./services/auth0.service";
 
 function Profile() {
     const location = useLocation()
-
+    useEffect(() => {
+        window.location.href = "https://staging.connectorNet.us/#/admin";
+    },[])
     const processHash = (hash) => {
         auth.parseHash({
             hash
@@ -41,7 +43,7 @@ function Profile() {
 
     return (
       <>
-          <h1>SUCCESSFULLY LOGGED IN</h1>
+          <a href="https://staging.connectorNet.us/#/admin"><h1>SUCCESSFULLY LOGGED IN</h1></a>
   
       </>
     );
